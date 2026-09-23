@@ -22,7 +22,7 @@ async function writeRoutesManifest() {
   };
   const outputPath = resolve(process.cwd(), ".next/routes-manifest.json");
   await mkdir(resolve(process.cwd(), ".next"), { recursive: true });
-  await writeFile(outputPath, \`${JSON.stringify(manifest, null, 2)}\\n\`);
+  await writeFile(outputPath, `${JSON.stringify(manifest, null, 2)}\n`);
 }
 
 const [command, ...args] = process.argv.slice(2);
