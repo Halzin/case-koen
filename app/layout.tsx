@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const sans = DM_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-display", display: "swap" });
+const sans = localFont({
+  src: "../public/fonts/dm-sans-latin-ext.woff2",
+  variable: "--font-body",
+  display: "swap",
+});
+const serif = localFont({
+  src: [
+    { path: "../public/fonts/instrument-serif-latin-ext.woff2", style: "normal", weight: "400" },
+    { path: "../public/fonts/instrument-serif-latin.woff2", style: "italic", weight: "400" },
+  ],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://koen-rio-concept-2026.fluffy-lark-5789.chatgpt.site"),
